@@ -6,4 +6,4 @@ export default function Admin() {
            <h1>Estamos en Admin</h1>
     </div>
     );
-}
+};
