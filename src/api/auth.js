@@ -19,7 +19,7 @@ export function getRefreshTokenApi(){
     return willExpireToken(refreshToken) ? null : refreshToken;
 }
 
-export function refreshAccessToken(refreshToken){
+export function refreshAccessTokenApi(refreshToken){
     const url = `${basePath}/${apiVersion}/-refresh-access-token`;
     const bodyObject={
         refreshToken:refreshToken
