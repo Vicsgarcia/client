@@ -3,7 +3,7 @@ import {ACCESS_TOKEN, REFRESH_TOKEN} from '../utils/constants';
 import jwtDecode from 'jwt-decode';
 
 
-export function getAccessToken (){
+export function getAccessTokenApi (){
     const accessToken= localStorage.getItem(ACCESS_TOKEN);
     if (!accessToken || accessToken === "null"){
         return null;
