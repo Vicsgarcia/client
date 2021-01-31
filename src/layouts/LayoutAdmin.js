@@ -19,39 +19,43 @@ export default function LayoutAdmin(props){
 
     console.log(user)
 
-    if(!user){
+    if(!user & !isLoading ){
         return(
             <>
             <Route path="/admin/login" component={AdminSignIn}/>
             <Redirect to="/admin/login"/>
             </>
-        )
+        );
     }
 
-
-
-    return(
-        <Layout>
-            <MenuSider menuCollapsed={menuCollapsed}/>
-            
-            <Layout 
-            className="layout-admin" 
-            style={{marginLeft: menuCollapsed? "80px" : "200px"}}>
-                <Header className="layout-admin__header">
-                    <MenuTop menuCollapsed={menuCollapsed} setMenuCollapsed={setMenuCollapsed}/> 
-                </Header>
-                <Content className="layout-admin__content">
-                    <LoadRoutes routes ={routes}/>
-                    Rutas
-                </Content>
-                <Footer className="layout-admin:__footer">
-                    Footer
-                </Footer>
+    if (user && !isLoading){
+        return(
+            <Layout>
+                <MenuSider menuCollapsed={menuCollapsed}/>
+                
+                <Layout 
+                className="layout-admin" 
+                style={{marginLeft: menuCollapsed? "80px" : "200px"}}>
+                    <Header className="layout-admin__header">
+                        <MenuTop menuCollapsed={menuCollapsed} setMenuCollapsed={setMenuCollapsed}/> 
+                    </Header>
+                    <Content className="layout-admin__content">
+                        <LoadRoutes routes ={routes}/>
+                        Rutas
+                    </Content>
+                    <Footer className="layout-admin:__footer">
+                        Footer
+                    </Footer>
+                </Layout>
+                
+    
             </Layout>
-            
+        );
+    }
+    return null;
 
-        </Layout>
-    )
+
+    
 }
 
 function LoadRoutes({routes}){
