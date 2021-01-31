@@ -2,11 +2,17 @@ import React from 'react';
 import {Button} from 'antd';
 import {AlignCenterOutlined, LogoutOutlined} from '@ant-design/icons';
 import Viclogo from '../../../assets/img/png/logo.png';
+import {logOut} from '../../../api/auth';
 
 import './MenuTop.scss';
 
 export default function MenuTop(props){
     const {menuCollapsed, setMenuCollapsed} = props;
+
+    const logOutUser = ()=>{
+        logOut();
+        window.location.reload();
+    }
 
 
     return (
@@ -23,7 +29,7 @@ export default function MenuTop(props){
                 </Button>
             </div>
             <div className="menu-top__right">
-                <Button type="link" onClick={() => alert("Desconexion")}>
+                <Button type="link" onClick={logOutUser}>
                     <LogoutOutlined />
 
                 </Button>
