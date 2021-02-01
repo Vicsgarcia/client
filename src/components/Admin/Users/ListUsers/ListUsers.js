@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Switch,List, Avatar, Button} from 'antd';
-//import NoAvatar from '../../../../Assets/img/png/no-avatar.png';
+import NoAvatar from '../../../../assets/img/png/no-avatar.png';
+import {EditOutlined, DeleteOutlined, StopOutlined, CheckOutlined} from '@ant-design/icons';
 
 import './ListsUsers.scss';
 
@@ -22,20 +23,100 @@ export default function ListUsers(props){
 
 
             </div>
-            {viewUsersActives? <UsersActive/> : <UsersInactive/>}
+            {viewUsersActives? <UsersActive usersActive={usersActive}/> : <UsersInactive usersInactive={usersInactive}/>}
             
         </div>
     )
 }
 
 
-function UsersActive(){
+function UsersActive(props){
+    const {usersActive} = props;
+
+
     return(
-        <h3>Lista de Usuarios Activos</h3>
+        <List 
+            className="users-active"
+            itemLayout="horizontal"
+            dataSource={usersActive}
+            renderItem={user=>(
+                <List.Item
+                actions={
+                    [
+                        <Button
+                        type="primary"
+                        onClick={()=> console.log("edit user")}
+                        >
+                            <EditOutlined />
+                        </Button>,
+                        <Button
+                        type="danger"
+                        onClick={()=> console.log("inactive user")}
+                        >
+                           <StopOutlined />
+                        </Button>,
+                        <Button
+                        type="danger"
+                        onClick={()=> console.log("delete user")}
+                        >
+                           <DeleteOutlined />
+                        </Button>
+                        
+                    ]
+                }
+                >
+                    <List.Item.Meta
+                    avatar={<Avatar src={ user.avatar ? user.avatar : NoAvatar }/>}
+                    title={`
+                        ${user.name ? user.name : "..."} 
+                        ${user.lastname ? user.lastname : "..."}
+                    `}
+                    description ={user.email}
+                    />
+                </List.Item>
+            )}
+        />
     )
 }
-function UsersInactive(){
+function UsersInactive(props){
+    const {usersInactive} =props
+
+
     return(
-        <h3>Lista de Usuarios Inactivos</h3>
+        <List 
+            className="users-inactive"
+            itemLayout="horizontal"
+            dataSource={usersInactive}
+            renderItem={user=>(
+                <List.Item
+                actions={
+                    [
+                        <Button
+                        type="primary"
+                        onClick={()=> console.log("Activar user")}
+                        >
+                            <CheckOutlined />
+                        </Button>,
+                        <Button
+                        type="danger"
+                        onClick={()=> console.log("delete user")}
+                        >
+                           <DeleteOutlined />
+                        </Button>
+                        
+                    ]
+                }
+                >
+                    <List.Item.Meta
+                    avatar={<Avatar src={ user.avatar ? user.avatar : NoAvatar }/>}
+                    title={`
+                        ${user.name ? user.name : "..."} 
+                        ${user.lastname ? user.lastname : "..."}
+                    `}
+                    description ={user.email}
+                    />
+                </List.Item>
+            )}
+        />
     )
 }
