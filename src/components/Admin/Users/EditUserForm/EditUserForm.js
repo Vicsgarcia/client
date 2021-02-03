@@ -3,18 +3,31 @@ import {Avatar, Form, Input, Select, Button, Row, Col} from 'antd';
 import {useDropzone} from 'react-dropzone';
 import NoAvatar from '../../../../assets/img/png/no-avatar.png';
 
+import {UserOutlined, MailOutlined} from '@ant-design/icons'
+
 import './EditUserForm.scss';
 
 
 export default function EditUserForm(props){
     const {user} = props;
     const [avatar, setAvatar] = useState(null);
-    console.log(avatar);
+    const [userData, setUserData] = useState({
+        name:user.name,
+        lastname: user.lastname,
+        email: user.email,
+        role: user.role,
+        avatar: user.avatar
+    });
+
+    const updateUser= e =>{
+        e.preventDefault();
+        console.log(userData);
+    }
 
     return(
         <div className="edit-user-form">
             <UploadAvatar avatar={avatar} setAvatar={setAvatar} />
-            <h2>{user.email}</h2>
+            <EditForm userData={userData} setUserData={setUserData} updateUser={updateUser}  />
         </div>
     )
 }
@@ -47,5 +60,67 @@ function UploadAvatar(props){
             )
             }
         </div>
+    )
+}
+
+
+function EditForm(props){
+    const {userData, setUserData, updateUser} = props;
+    const {Option} = Select;
+
+    return(
+        <Form className="form-edit" onSubmit={updateUser}>
+            <Row gutter={24}>
+                <Col span={12}>
+                    <Form.Item>
+                        <Input 
+                        prefix={<UserOutlined />}
+                        placeholder="Nombre"
+                        defaultValue={userData.name}
+                        onChange={e => setUserData({
+                            ...userData, name: e.target.value
+                        })}
+                        />
+                    </Form.Item>
+                </Col>
+                <Col span={12}>
+                        <Input 
+                        prefix={<UserOutlined />}
+                        placeholder="Apellido"
+                        defaultValue={userData.lastname}
+                        onChange={e => setUserData({
+                            ...userData, lastname: e.target.value
+                        })}
+                        />
+
+                </Col>
+            </Row>
+
+            <Row gutter={24}>
+                <Col span={12}>
+                <Input 
+                        prefix={<MailOutlined />}
+                        placeholder="Email"
+                        defaultValue={userData.mail}
+                        onChange={e => setUserData({
+                            ...userData, mail: e.target.value
+                        })}
+                        />
+                </Col>
+
+                <Col span={12}></Col>
+            </Row>
+
+            <Row gutter={24}>
+                <Col span={12}></Col>
+                <Col span={12}></Col>
+            </Row>
+
+            <Form.Item>
+                <Button type="primary" htmlType="submit" onClick={updateUser} className="btn-submit">
+                    Actualizar Usuario
+                </Button>
+            </Form.Item>
+        </Form>
     )
 }
