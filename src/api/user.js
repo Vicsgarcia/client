@@ -137,11 +137,12 @@ export function getAvatarApi(avatarName){
 }
 
 export function updateUserApi(token, user, userId){
-    const url =`${basePath}/${apiVersion}/update-user/${userId}`
+    const url =`${basePath}/${apiVersion}/update-user/${userId}`;
+    
     const params ={
         method:"PUT",
-        header:{ 
-            "Content-Type":"Application/JSON",
+        headers:{ 
+            "Content-Type":"application/json",
             Authorization:token
         },
         body: JSON.stringify(user)
