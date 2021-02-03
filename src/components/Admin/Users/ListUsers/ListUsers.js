@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Switch,List, Avatar, Button} from 'antd';
 import NoAvatar from '../../../../assets/img/png/no-avatar.png';
 import {EditOutlined, DeleteOutlined, StopOutlined, CheckOutlined} from '@ant-design/icons';
+import Modal from '../../../Modal';
 
 import './ListsUsers.scss';
 
@@ -24,7 +25,13 @@ export default function ListUsers(props){
 
             </div>
             {viewUsersActives? <UsersActive usersActive={usersActive}/> : <UsersInactive usersInactive={usersInactive}/>}
-            
+            <Modal
+            title="Modal un"
+            isVisible={true}
+            setIsVisible={()=> console.log("hola")}
+            >
+                Modal
+            </Modal>
         </div>
     )
 }
