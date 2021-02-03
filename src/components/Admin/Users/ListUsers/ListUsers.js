@@ -10,7 +10,7 @@ import {getAvatarApi} from '../../../../api/user';
 import './ListsUsers.scss';
 
 export default function ListUsers(props){
-    const {usersActive, usersInactive} = props;
+    const {usersActive, usersInactive, setReloadUsers} = props;
     const [viewUsersActives, setViewUsersActive] =useState(true);
     const [isVisibleModal, setIsVisibleModal] = useState(false);
     const [modalTitle, setModalTitle]= useState("");
@@ -36,6 +36,7 @@ export default function ListUsers(props){
                 setIsVisibleModal={setIsVisibleModal} 
                 setModalTitle={setModalTitle} 
                 setModalContent={setModalContent}
+                setReloadUsers={setReloadUsers}
             /> : 
             <UsersInactive 
                 usersInactive={usersInactive}
@@ -58,7 +59,8 @@ function UsersActive(props){
         usersActive, 
         setIsVisibleModal, 
         setModalTitle, 
-        setModalContent
+        setModalContent,
+        setReloadUsers
     } = props;
 
     const editUser= user =>{
@@ -67,7 +69,11 @@ function UsersActive(props){
             `Editar ${user.name ? user.name : "sin nombre"} ${
                 user.lastname ? user.lastname : "..."}`
                 );
-        setModalContent(<EditUserForm user={user} />)
+        setModalContent(<EditUserForm 
+            user={user} 
+            setIsVisibleModal={setIsVisibleModal} 
+            setReloadUsers={setReloadUsers}
+            />)
     }
 
 
@@ -129,16 +135,10 @@ function UserActive(props){
                     description ={user.email}
                     />
                 </List.Item>
-           
-
     )
 }
-
-
 function UsersInactive(props){
     const {usersInactive} =props
-
-
     return(
         <List 
             className="users-inactive"

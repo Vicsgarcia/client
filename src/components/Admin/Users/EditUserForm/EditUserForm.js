@@ -11,7 +11,7 @@ import './EditUserForm.scss';
 
 
 export default function EditUserForm(props){
-    const {user} = props;
+    const {user, setIsVisibleModal, setReloadUsers} = props;
     const [avatar, setAvatar] = useState(null);
     const [userData, setUserData] = useState({});
 
@@ -66,6 +66,8 @@ export default function EditUserForm(props){
                     notification["success"]({
                         message:result.message
                     });
+                    setIsVisibleModal(false);
+                    setReloadUsers(true);
                 });
             });
         } else{
@@ -73,6 +75,8 @@ export default function EditUserForm(props){
                 notification["success"]({
                     message:result.message
                 });
+                setIsVisibleModal(false);
+                setReloadUsers(true);
             });
 
         }
