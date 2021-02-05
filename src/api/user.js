@@ -197,3 +197,7 @@ export function deleteUserApi(token, userId){
         return err.message
     });
 };
+
+export function createUserApi(token, data){
+    const url = `${basePath}/${apiVersion}/create-user`;
+}
