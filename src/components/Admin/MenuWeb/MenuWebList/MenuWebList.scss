@@ -1,3 +1,37 @@
 .menu-web-list{
+    padding:30px;
 
+    &__header{
+        display:flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-bottom: 20px;
+    }
+
+    &__items{
+        background-color: white;
+        padding:10px 20px;
+
+        .List{
+            .draggable{
+                width:100%;
+                background-color: RGBA(255,255,255, 0.5);
+
+                &:hover{
+                    cursor:pointer;
+                }
+
+                &.dragged{
+                    border: solid 1px #e2e2e2;
+                    padding: 0px 10px;
+                }
+            }
+        }
+
+        .ant-list-item.met{
+            display: flex;
+            align-items: center;
+            
+        }
+    }
 }
