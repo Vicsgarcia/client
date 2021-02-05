@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Form, Select, Button, Col, Row, Notification, Input} from 'antd';
+import {Form, Select, Button, Col, Row, notification, Input} from 'antd';
 import {createUserApi} from '../../../../api/user';
 import {getAccessTokenApi} from '../../../../api/auth';
 import {UserOutlined, LockOutlined, MailOutlined } from '@ant-design/icons';
@@ -14,7 +14,39 @@ export default function EditUserForm (props){
 
     const addUser = event =>{
         event.preventDefault();
-        console.log("creando user")
+        if(
+            !userData.name || 
+            !userData.lastname || 
+            !userData.role ||
+            !userData.email ||
+            !userData.password ||
+            !userData.repeatPassword
+            ){
+                notification["error"]({
+                    message:"Todos los campos son obligatorios"
+                })
+            } else if(userData.password !== userData.repeatPassword){
+                notification["error"]({
+                    message:"Las contraseñas no coinciden"
+                })
+            } else{
+                const accessToken =getAccessTokenApi();
+                createUserApi(accessToken, userData)
+                    .then(response =>{
+                        notification ["success"]({
+                            message:response
+                        })
+                        setIsVisibleModal(false);
+                        setReloadUsers(true);
+                        setUserData({})
+                    })
+                    .catch(err=>{
+                        notification ["error"]({
+                            message:err
+                        })
+                    })
+
+            }
     }
 
     return (
