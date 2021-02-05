@@ -17,7 +17,6 @@ export default function LayoutAdmin(props){
     const {Header, Content, Footer}= Layout;
     const {user,isLoading} = useAuth();
 
-    console.log(user)
 
     if(!user & !isLoading ){
         return(
