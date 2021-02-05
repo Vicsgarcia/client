@@ -48,10 +48,17 @@ export default function EditUserForm(props){
 
         if(userUpdate.password || userUpdate.repeatPassword){
             if(userUpdate.password !== userUpdate.repeatPassword){
-                notification["error"]({message:"Las Contraseñas tienen que ser iguales"})
-            } 
-            return;
+                notification["error"]({
+                    message:"Las Contraseñas tienen que ser iguales"
+                })
+                return;
+            } else{
+                delete userUpdate.repeatPassword;
+                //delete userUpdate.password;
+                
+            }
         }
+
         
         if(!userUpdate.name || !userUpdate.lastname || !userUpdate.email){
             notification["error"]({
@@ -222,7 +229,7 @@ function EditForm(props){
                             type="password"
                             placeholder="Repetir Contraseña"
                             onChange={e => setUserData({
-                                ...userData, RepeatPassword: e.target.value
+                                ...userData, repeatPassword: e.target.value
                             })}
                         />
                     </Form.Item>
