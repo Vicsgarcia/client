@@ -34,15 +34,15 @@ export default function LayoutAdmin(props){
                 
                 <Layout 
                 className="layout-admin" 
-                style={{marginLeft: menuCollapsed? "80px" : "200px"}}>
+                /**/>
                     <Header className="layout-admin__header">
                         <MenuTop menuCollapsed={menuCollapsed} setMenuCollapsed={setMenuCollapsed}/> 
                     </Header>
-                    <Content className="layout-admin__content">
+                    <Content className="layout-admin__content" style={{marginLeft: menuCollapsed? "80px" : "200px"}}>
                         <LoadRoutes routes ={routes}/>
                         Rutas
                     </Content>
-                    <Footer className="layout-admin:__footer">
+                    <Footer className="layout-admin__footer">
                         Footer
                     </Footer>
                 </Layout>
