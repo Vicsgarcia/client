@@ -11,8 +11,10 @@
     &__items{
         background-color: white;
         padding:10px 20px;
+        
 
         .List{
+            position:relative;
             .draggable{
                 width:100%;
                 background-color: RGBA(255,255,255, 0.5);
