@@ -18,9 +18,6 @@ export default function AddMenuWebForm(props){
             url: (menuWebData.http ? menuWebData.http : "http://" ) + menuWebData.url
         };
 
-        console.log(finalData);
-    
-
         if (!finalData.title || !finalData.url || !menuWebData.url){
             notification["error"]({message:"Todos los campos son obligatorios"})
         } else{
@@ -30,7 +27,7 @@ export default function AddMenuWebForm(props){
 
             addMenuApi(accessToken, finalData)
                 .then(response=>{
-                    console.log(finalData)
+                    
                     notification["success"]({
                         message:response
                     })
@@ -41,7 +38,7 @@ export default function AddMenuWebForm(props){
                     finalData={};
                 })
                 .catch(()=>{
-                    console.log("2");
+                    
                     notification["error"]({message:"Error en el servidor"})
                 })
         }
