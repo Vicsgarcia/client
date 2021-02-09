@@ -1,11 +1,12 @@
 @import '../../../scss/index.scss';
 
 .footer{
-    background-color: $background-light;
+    background-color: $background-dark-light-web;
     border-top: 3px solid $primary-color;
 
     &__copyright{
-        margin-top: 30px;
+        margin-top: 180px;
+        
         .ant-col{
             color:$primary-color-dark;
 
