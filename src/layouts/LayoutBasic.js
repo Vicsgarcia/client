@@ -1,15 +1,15 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
-import {Layout, Row, Col} from 'antd';
+import {Row, Col} from 'antd';
 
 import MenuTop from '../components/Web/MenuTop/MenuTop';
+import Footer from '../components/Web/Footer';
 
 import './LayoutBasic.scss'
 
 
 export default function LayoutBasic(props){
     const {routes} = props;
-    const {Footer } = Layout;
 
     return(
         <>
@@ -22,9 +22,7 @@ export default function LayoutBasic(props){
                 <Col md={2}/>
             </Row>
             <LoadRoutes routes={routes}/>
-            <Footer>
-                VK Websites
-            </Footer>
+            <Footer/>
         </>
         
     )
