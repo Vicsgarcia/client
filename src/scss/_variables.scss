@@ -1,16 +1,16 @@
 $defaultFontSize: 16px;
 
-$primary-color: #008390;
-$primary-color-hover: #0280b3;
+$primary-color: #a07e39;
+$primary-color-hover: #584621;
 
-$menu-color:#252527;
+$menu-color:#f3d8a1;
 
 $font-light: #fff;
 $font-grey-light: #e8e8e8;
 $font-grey: #808080;
 $font-grey-dark:#000;
-$font-dark-light:#252527;
-$font-dark:#000;
+$font-dark-light:#7e6431;
+$font-dark:#584621;
 
 $border-light: #fff;
 $border-grey-light: #e8e8e8;
@@ -20,19 +20,31 @@ $border-dark-light:#252527;
 $border-dark:#000;
 
 $background-light: #fff;
-$background-grey-light: #e8e8e8;
-$background-grey: #808080;
-$background-grey-dark:#595959;
-$background-dark-light:#252527;
+$background-grey-light: #fbf0da;
+$background-grey: #f5deb1;
+$background-grey-dark:#f5cf83;
+$background-dark-light:#f3d8a1;
 $background-dark:#000;
-$background-error:#ff00001f;
-$background-success:#84b84c1f;
-$background-dark-web:#16202b;
+$background-error:#7c5b19;
+$background-success:#e9a41b;
+$background-dark-web:#f3d8a1;
+$background-dark-light-web: red;
+
+
+$box-shadow: #4735104d;
+
 
 
 $success: #84b84c;
 $error: #f00;
 $warning:orange;
+
+
+$youtube: #cd201f;
+$facebook:#3b5998;
+$twitter:#1d1af2;
+//$instagram:
+$linkedin:#0077b5;
 
 //responsive down size
 
@@ -49,3 +61,5 @@ $media-breakpoint-up-sm:576px;
 $media-breakpoint-up-md:768px;
 $media-breakpoint-up-lg:992px;
 $media-breakpoint-up-xl:1200px;
+
+

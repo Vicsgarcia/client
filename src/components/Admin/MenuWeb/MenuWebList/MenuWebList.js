@@ -117,8 +117,11 @@ export default function MenuWebList(props){
     return(
         <div className="menu-web-list">
             <div className="menu-web-list__header">
-                <Button type="primary" onClick={addMenuWebModal}>
-                    Nueva página
+                <Button 
+                    type="primary" 
+                    onClick={addMenuWebModal} 
+                    className="menu-web-list__header-btn-new-menu">
+                        Nueva página
                 </Button>
             </div>  
             <div className="menu-web-list__items">

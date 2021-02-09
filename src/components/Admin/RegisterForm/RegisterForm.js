@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+
 import {Form,Input, Button, Checkbox, notification} from 'antd'
 import {MailOutlined, LockOutlined } from '@ant-design/icons'
 import {emailValidation, minLengthValidation} from '../../../utils/formValidation';
@@ -166,5 +167,7 @@ export default function RegisterForm(){
                 </Button>
             </Form.Item>
         </Form>
+      
+        
     );
 }

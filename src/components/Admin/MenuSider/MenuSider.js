@@ -10,22 +10,22 @@ function MenuSider(props){
     const {Sider} = Layout;
     return(
         <Sider className="admin-sider" collapsed={menuCollapsed}>
-            <Menu theme="dark" mode="inline" defaultSelectedKeys={[location.pathname]}>
+            <Menu theme="dark" className="admin-sider__menu" mode="inline" defaultSelectedKeys={[location.pathname]}>
                 <Menu.Item key="/admin">
                     <Link to={"/admin"}>
-                        <BankOutlined />
+                        <BankOutlined className="nav-text"  />
                         <span className="nav-text">Home</span>
                     </Link>
                 </Menu.Item>
                 <Menu.Item key="/admin/users">
                     <Link to={"/admin/users"}>
-                        <UserOutlined />
+                        <UserOutlined className="nav-text" />
                         <span className="nav-text">Usuarios</span>
                     </Link>
                 </Menu.Item>
                 <Menu.Item key="/admin/menu">
                     <Link to={"/admin/menu"}>
-                    <MenuOutlined />
+                    <MenuOutlined className="nav-text"  />
                         <span className="nav-text">Menu</span>
                     </Link>
                 </Menu.Item>

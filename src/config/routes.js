@@ -9,10 +9,12 @@ import AdminMenuWeb from '../pages/Admin/MenuWeb';
 
 
 
-
+//PAGES
 import Home from '../pages/Home';
 import Contact from '../pages/Contact';
 import Error404 from '../pages/Error404';
+import Products from '../pages/Products';
+
 
 const routes =[
     {
@@ -59,6 +61,11 @@ const routes =[
             {
                 path:'/contact',
                 component: Contact,
+                exact: true,
+            },
+            {
+                path:'/products',
+                component: Products,
                 exact: true,
             },
             {

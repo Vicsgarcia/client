@@ -1,11 +1,15 @@
 import React from 'react';
+import MainBanner from '../components/Web/MainBanner';
+import HomeProducts from '../components/Web/HomeProducts';
 
 
 export default function Home(){
     return(
-        <div>
-            <h1>Home</h1>
-        </div>
+        <>
+            <MainBanner/>
+            <HomeProducts />
+        </>
+        
        
     )
 }

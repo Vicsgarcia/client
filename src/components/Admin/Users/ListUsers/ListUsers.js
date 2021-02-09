@@ -47,7 +47,7 @@ export default function ListUsers(props) {
                         {viewUsersActives ? "Usuarios Activos" : "Usuarios Inactivos"}
                     </span>
                 </div>
-                <Button type="Primary" onClick={addUserModal}>
+                <Button  onClick={addUserModal} className="list-users__header-btn-new-user">
                     Nuevo Usuario
                 </Button>
 

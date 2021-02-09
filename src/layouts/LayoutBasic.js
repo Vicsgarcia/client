@@ -12,17 +12,20 @@ export default function LayoutBasic(props){
     const {Footer } = Layout;
 
     return(
-        <Row>
-            <Col md={2}/>
-            <Col md={20}>
-               <MenuTop/>
-                <LoadRoutes routes={routes}/>
-                <Footer>
-                   Vic
-               </Footer>
-            </Col>
-            <Col md={2}/>
-        </Row>
+        <>
+            <Row>
+                <Col md={2}/>
+                <Col md={20}>
+                <MenuTop/>
+                
+                </Col>
+                <Col md={2}/>
+            </Row>
+            <LoadRoutes routes={routes}/>
+            <Footer>
+                VK Websites
+            </Footer>
+        </>
         
     )
 }

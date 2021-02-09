@@ -32,6 +32,7 @@
         &:hover{
             background-color: $primary-color-hover;
             color: $font-light;
+            border:0;
         }
         &:focus,
         &:active{

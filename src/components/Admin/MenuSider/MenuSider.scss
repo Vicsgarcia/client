@@ -1,11 +1,23 @@
 @import '../../../scss/index.scss';
 
 .admin-sider {
-    
+    background-color: $background-dark-light !important;
     height: 100vh;
     position: fixed;
     left:0;
     top:64px;
     overflow: auto;
 
+    .ant-menu-item-selected{
+        background-color: white !important
+    }
+
+    &__menu{
+        background-color: $background-dark-light !important;
+    }
+
+    .nav-text{
+        color: $font-dark !important;
+    }   
 }
+

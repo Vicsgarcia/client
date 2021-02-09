@@ -1,7 +1,8 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import {Button} from 'antd';
 import {AlignCenterOutlined, LogoutOutlined} from '@ant-design/icons';
-import Viclogo from '../../../assets/img/png/logo.png';
+import logoWhite from '../../../assets/img/png/logo.png';
 import {logOut} from '../../../api/auth';
 
 import './MenuTop.scss';
@@ -18,12 +19,11 @@ export default function MenuTop(props){
     return (
         <div className="menu-top">
             <div className="menu-top__left">
-                <img 
-                    className="menu-top__left-logo"
-                    src={Viclogo}
-                    alt='Logo vic'
+                <Link to={"/"}>
+                    <img src={logoWhite} alt="logo web" className="menu-top__left-logo"/>
+                </Link>
                     
-                />
+                
                 <Button type="link" onClick={() => setMenuCollapsed(!menuCollapsed)}>
                     <AlignCenterOutlined/>                    
                 </Button>
