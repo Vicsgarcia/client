@@ -29,7 +29,7 @@ export default function HomeProducts() {
                             image={product1}
                             title ="Cocina"
                             description="Lo mejor para la casa"
-                            link="/products/1"
+                            link="/products"
                         />
                     </Col>
                     <Col md={6}>
@@ -37,7 +37,7 @@ export default function HomeProducts() {
                             image={product2}
                             title ="Cocina"
                             description="Lo mejor para la casa"
-                            link="/products/2"
+                            link="/products"
                         />
                     </Col>
                     <Col md={6}>
@@ -45,7 +45,7 @@ export default function HomeProducts() {
                             image={product3}
                             title ="Cocina"
                             description="Lo mejor para la casa"
-                            link="/products/3"
+                            link="/products"
                         />
                     </Col>
                     <Col md={6}>
@@ -53,7 +53,7 @@ export default function HomeProducts() {
                             image={product4}
                             title ="Cocina"
                             description="Lo mejor para la casa"
-                            link="/products/4"
+                            link="/products"
                         />
                     </Col>    
                 </Row>
@@ -63,7 +63,7 @@ export default function HomeProducts() {
                             image={product5}
                             title ="Cocina"
                             description="Lo mejor para la casa"
-                            link="/products/5"
+                            link="/products"
                         />
                     </Col>
                     <Col md={6}>
@@ -79,7 +79,7 @@ export default function HomeProducts() {
                             image={product7}
                             title ="Cocina"
                             description="Lo mejor para la casa"
-                            link="/products/7"
+                            link="/products"
                         />
                     </Col>
                     <Col md={6}>
@@ -87,7 +87,7 @@ export default function HomeProducts() {
                             image={product8}
                             title ="Cocina"
                             description="Lo mejor para la casa"
-                            link="/products/8"
+                            link="/products"
                         />
                     </Col>    
                 </Row>
